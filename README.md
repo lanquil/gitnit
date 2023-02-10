@@ -1,0 +1,2 @@
+# gitnit
+Recursive git-status
