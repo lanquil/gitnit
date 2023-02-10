@@ -1,0 +1,7 @@
+/target
+.pre-commit-config.yaml
+
+# Devenv
+.devenv*
+devenv.local.nix
+

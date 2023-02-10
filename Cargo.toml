@@ -1,0 +1,31 @@
+[package]
+name = "gitnit"
+version = "0.1.0-alpha.1"
+authors = ["Lan Quil"]
+edition = "2021"
+description = "Recursive git-status"
+license = "MPL-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+git2 = "0.16.1"
+color-eyre = "0.6.1"
+thiserror = "1.0.30"
+tracing = "0.1.31"
+tracing-error = "0.2.0"
+tracing-subscriber = { version = "0.3.9", features = ["env-filter"] }
+figment = { version = "0.10.8", features = ["env", "toml"] }
+clap = { version = "4.0", features = ['derive'] }
+
+[dev-dependencies]
+tracing-test = "0.2.1"
+serial_test = "0.10.0"
+insta = { version = "1.26.0", features = ["ron"] }
+
+[profile.dev.package.insta]
+# Insta benefits from being compiled in release mode, even as dev dependency
+opt-level = 3
+
+[profile.dev.package.similar]
+opt-level = 3
